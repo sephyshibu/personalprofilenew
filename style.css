@@ -175,6 +175,58 @@ a:hover {
     flex: 1 1 100%; /* One item per row on small screens */
   }
 }
+#edu {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  height: auto;
+}
+
+#edu h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.edus {
+  background-color: #f9f9f9;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Default stack on smaller screens */
+}
+
+
+
+.edus h3 {
+  margin-top: 0;
+}
+
+.edus p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Responsive Layout: On larger screens */
+@media (min-width: 768px) {
+  .edus {
+    flex-direction: row; /* Side-by-side layout */
+    align-items: center;
+  }
+
+  /* .project img {
+    width: 40%;
+    margin-right: 20px;
+  } */
+
+  .edus h3, .edus p, .edus a {
+    width: 60%; /* 60% width for text content */
+  }
+}
 
 section {
   padding-top: 4vh;
