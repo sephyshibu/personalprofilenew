@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Sephy Shibu Mathew</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#internships">Internship</a></li>
+          <li><a href="#edu">educational Qualification</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Sephy</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#edu" onclick="toggleMenu()">Educational Qualification</a></li>
+          <li><a href="#internships" onclick="toggleMenu()">Internship</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/crop.jpg" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Sephy</h1>
+        <p class="section__text__p2">Mtech Graduate</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-1"
+            onclick="window.open('./assets/SEPHY SHIBU RESUME.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/sephy-shibu-mathew-8173481aa'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/sephyshibu '"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/profile.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          
+          <div class="text-container">
+            <p>
+              I am a MTech graduate in Computer Science and Information Systems from Rajagiri School of Engineering and Technology, 
+              with a strong passion for web development.My passion is to design digital user experiences through the bold interface and meaningful interactions. During my academic journey, I have honed my skills in key web technologies including HTML, CSS, JavaScript, and React.js. 
+              I completed my BTech from Amal Jyothi College of Engineering, where I laid a solid foundation in computer science principles.In 2023, I had the opportunity to intern at LTIMindtree, 
+              where I gained hands-on experience in a professional environment. This internship allowed me to apply my knowledge in real-world scenarios, further sharpening my technical abilities 
+              and enhancing my problem-solving skills.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+
+
+    <section id="skills">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
+      <div id="skills">
+        
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Figma </li>
+          <li>Wordpress</li>
+          <li>Bootstrap</li>
+          <li>Java</li>
+          
+        </ul>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+      
+
+
+
+
+  <section id="internships">
+    
+      <h1 class="title">Internships</h1>
+    
+      <div class="internship">
+        <h3>Java</h3>
+        <p><strong>Company:</strong> LTIMindtree</p>
+        <p><strong>Duration:</strong> February 2023 - May 2023</p>
+        
+      </div>
+    
+      <div class="internship">
+        <h3>Machine Learning</h3>
+        <p><strong>Company:</strong> Nest Cyber Campus</p>
+        <p><strong>Duration:</strong> June 2019</p>
+        
+      </div>
+
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+  </section>
+
+
+
+
+
+
+
+
+
+    <section id="projects">
+      <h1>Projects</h1>
+      <div class="project">
+       
+        <h3>ReactJs Product page</h3>
+        <a href=" https://sephyshibu.github.io/Product-Page-using-React.js/" target="_blank">Live Demo</a>
+        <p>This React.js project builds a product page website that showcases detailed product information, including color
+          selection and feature customization options.The website is structured with a topbar for navigation and a main
+          content area displaying product details, color options, and feature selection components. Components Topbar:
+          Displays navigation links or other relevant information. Product image ProductDetails: Renders product name,
+          description,images, fesatures like time and heartrate. Displays product details, including name, description, price,
+          and images. Renders a color selector component with available color options. Provides a feature selector component
+          with customizable options (e.g., time, heart rate). Updates product information based on selected color and
+          features.</p>
+        
+      </div>
+    
+      <div class="project">
+        <h3>Developed a Personal Finance Tracker using JavaScript.</h3>
+        <a href=" https://sephyshibu.github.io/Personal-finance-tracker-using-javascript-/" target="_blank">Live Demo</a>
+        <p>his web application allows users to
+          select items, add amounts, and view a history of the added entries. Users can also delete items from the list, filter entries based on specific criteria, and calculate the total amount. 
+          This project demonstrates proficiency in front-end web development and effective handling of user interactions and data manipulation.</p>
+       
+      </div>
+
+      <div class="project">
+        <h3>Predicting Diabetes using Hypergraph Learning Model</h3>
+        
+        <p>The effectiveness of two different feature selection methods for predicting diabetes using the SVM algorithwas compared. The first method involved using a hypergraph learning model for feature selection, while the second method used an association score with p- value to select features. 
+          This project evaluated the performance of both methods by measuring their accuracy in predicting diabetes using the SVM algorithm.</p>
+       
+      </div>
+
+      <div class="project">
+        <h3>Covid 19 Prediction Using Bidirectional LSTM</h3>
+        
+        <p>Long short-term memory (LSTM) and bidirectional LSTM were used to predict COVID-19-positive patients in India.
+          The accuracy of each model by calculating the predicted positive patient count and comparing it with the actual count.
+        </p>
+       
+      </div>
+
+      <div class="project">
+        <h3>Virtual Assistant Using Raspberry Pi</h3>
+        
+        <p>The device is a voice enabled system that would direct the visually challenged person.The idea is to implement through a camera mounted on spectacle which is connected with a Raspberry Pi 4. System focuses on voice assistant, image recognition, reading text, weather forecast, wikipedia answers, object recognition. The system is capable to assist using voice command to recognize objects in the surrounding, do text analysis to recognize the text in the hard copy document or images, recognise the peoples around them, determine the condition of climate.
+          The output is delivered to the user in the form of audio, either through the earphones
+         </p>
+       
+      </div>
+      
+      <img
+      src="./assets/arrow.png"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="location.href='./#projects'"
+    />
+    </section>
+
+    <!-- <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+        </div>
+      </div>
+    </section> -->
+
+
+    <section id="contact-form">
+      <h2>Contact Us</h2>
+      <form id="form" method="POST" action="https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+          <span class="error" id="nameError"></span>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+          <span class="error" id="emailError"></span>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
+          <span class="error" id="messageError"></span>
+        </div>
+  
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+
+
+
+
+
+
+
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#internships">Internships</a></li>
+            <li><a href="#edu">Educational Qualification</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Sephy Shibu Mathew. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
