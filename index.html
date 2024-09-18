@@ -159,8 +159,7 @@
       <div class="project">
         <h3>Evershine Residential School</h3>
         
-        <p>ICSE -86%
-        </p>
+        <p>ICSE : 86%</p>
        
       </div>
 
@@ -291,7 +290,7 @@
 
     <section id="contact-form">
       <h2>Contact Us</h2>
-      <form id="form" method="POST" action="https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec">
+      <form id="form" action="">
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" placeholder="Enter your name">
@@ -312,6 +311,25 @@
   
         <button type="submit">Submit</button>
       </form>
+      <script>
+        $("#form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec",
+                data:$("#form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
     </section>
 
 
