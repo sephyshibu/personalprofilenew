@@ -311,25 +311,7 @@
   
         <button type="submit">Submit</button>
       </form>
-      <script>
-        $("#form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec",
-                data:$("#form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script>
+
     </section>
 
 
@@ -355,5 +337,24 @@
       <p>Copyright &#169; 2024 Sephy Shibu Mathew. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+          <script>
+        $("#form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec",
+                data:$("#form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
   </body>
 </html>
