@@ -343,16 +343,22 @@
     e.preventDefault();
 
     // Validation for the name field
-    const name = $("#name").val();
+    const name = $("#name").val().trim(); // Trim removes any leading/trailing spaces
     const nameError = $("#nameError");
-    const nameRegex = /^[A-Za-z]+$/; // Regex to allow only letters, no spaces or numbers
+    const nameRegex = /^[A-Za-z]+$/; // Updated regex to allow only letters
 
     // Clear previous error message
     nameError.text("");
 
-    // Check if the name is valid
+    // Check if the name is empty or contains only spaces
+    if (name === "") {
+      nameError.text("Name cannot be empty or contain only spaces.");
+      return; // Stop form submission
+    }
+
+    // Check if the name contains only letters (no numbers or spaces within)
     if (!nameRegex.test(name)) {
-      nameError.text("Name cannot contain spaces or numbers.");
+      nameError.text("Name can only contain letters (no numbers or spaces).");
       return; // Stop form submission
     }
 
