@@ -290,7 +290,7 @@
     </section> -->
 
 
-    <section id="contact-form">
+<!--     <section id="contact-form">
   <h2>Contact Us</h2>
   <form id="form" action="">
     <div class="form-group">
@@ -313,7 +313,7 @@
 
     <button type="submit">Submit</button>
   </form>
-</section>
+</section> -->
 
 
 
@@ -336,45 +336,126 @@
       </nav>
       <p>Copyright &#169; 2024 Sephy Shibu Mathew. All Rights Reserved.</p>
     </footer>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+  <section id="contact-form">
+      <form action="https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec" id="form" novalidate="novalidate">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Name" id="name" onkeyup="validateName()" />
+          <span id="name-error"></span>
+          <!-- <input type="text" name="Subject" placeholder="Subject" id="contact-company" onkeyup="validCompany()"/>
+          <span id="company-error"></span> -->
+          
+            
+            
+          
+        </div>
+        <div class="form-group">
+          <input type="email"  name="email" placeholder="Email" id="email" onkeyup="validateEmail()"/>
+          <span id="email-error"></span>
+          
+          <!-- <input type="text" name="Phone" placeholder="Phone" id="contact-phone" onkeyup="validatePhone()"/>
+          <span id="phone-error"></span> -->
+          
+        </div>
+        <div class="form-group"></div>
+        <textarea name="message"  placeholder="Message" id="message" onkeyup="validateMessage()">
+        </textarea>
+        <span id="message-error"></span>
+        <!-- <input type="submit" value="Submit" id="submit-form" onkeyup="validateForm()" /> -->
+        <button class="button-1" onclick="return validateForm()">Submit</button>                    
+        <span id="submit-error"></span>
+      </form>
+    </section>
+
+
 <script>
-  $("#form").submit((e) => {
-    e.preventDefault();
+    
+  var  nameError = document.getElementById('name-error')
+ 
+  var emailError = document.getElementById('email-error')
+  
+  var messageError = document.getElementById('message-error')
+  var submitError = document.getElementById('submit-error')
 
-    // Validation for the name field
-    const name = $("#name").val().trim(); // Trim removes any leading/trailing spaces
-    const nameError = $("#nameError");
-    const nameRegex = /^[A-Za-z]+$/; // Updated regex to allow only letters
+  function validateName(){
+  var name =document.getElementById('name').value;
+  if(name.lenght == 0){
+  nameError.innerHTML = 'Name is required';
+  return false;
+  }
+  if(!name.match(/^[A-Za-z]+(\s{1}[A-Za-z]+)+$/)){
+  nameError.innerHTML = 'Enter full Name';
+  return false;
+  }
+  // nameError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  // return true;
 
-    // Clear previous error message
-    nameError.text("");
+  }
+  function validateEmail(){
+  var email = document.getElementById('email').value;
+  var emailError = document.getElementById('email-error')
 
-    // Check if the name is empty or contains only spaces
-    if (name === "") {
-      nameError.text("Name cannot be empty or contain only spaces.");
-      return; // Stop form submission
+  if(email.lenght == 0){
+  emailError.innerHTML = 'Email is required';
+  return false;
+  }
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email.match(emailPattern)){
+  emailError.innerHTML = 'Invalid Email';
+  return false;
+  }
+  // emailError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  // return true;
+  }
+  function validateMessage() {
+  var message = document.getElementById('message').value;
+  if(message.length === 0) {
+  messageError.innerHTML = 'Message is required';
+  return false;
+  }
+  // messageError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  // return true;
+  }
+  
+  function validateForm(){
+
+  if(!validateName() || !validateEmail() || !validateMessage()){
+  submitError.innerHTML ='please fill contents';
+  return false;
+
+
+  }
+  submitError.innerHTML ='';
+  return true;
+
+  }
+
+  //submission
+
+
+  $(document).ready(function(){
+  $("#submit-form").submit((e) => {
+  e.preventDefault()
+  if (validateForm()){
+  $.ajax({
+    url: "https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec",
+    data: $("#form").serialize(),
+    method: "post",
+    success: function (response) {
+      alert("Form submitted successfully")
+      window.location.reload()
+      //window.location.href="https://google.com"
+    },
+    error: function (err) {
+      alert("Something Error")
     }
-
-    // Check if the name contains only letters (no numbers or spaces within)
-    if (!nameRegex.test(name)) {
-      nameError.text("Name can only contain letters (no numbers or spaces).");
-      return; // Stop form submission
-    }
-
-    // Proceed with AJAX submission if validation passes
-    $.ajax({
-      url: "https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec",
-      data: $("#form").serialize(),
-      method: "post",
-      success: function (response) {
-        alert("Form submitted successfully");
-        window.location.reload();
-      },
-      error: function (err) {
-        alert("Something Error");
-      }
-    });
   });
+  }
+  })
+  })
+
 </script>
+
+
   </body>
 </html>
