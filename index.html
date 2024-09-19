@@ -324,7 +324,7 @@
    
 
   <section id="contact-form">
-      <form action="https://script.google.com/macros/s/AKfycbzrTMb280uj4CqXCIINtZo1Q_nCOPo8yhCZctrwvr5wAaYkYHmB9D2xy3EC3EUKr0A6/exec" id="form" novalidate="novalidate">
+      <form action="" id="form" novalidate="novalidate">
         <div class="form-group">
           <input type="text" name="name" placeholder="Name" id="name" onkeyup="validateName()" />
           <span id="name-error"></span>
@@ -365,7 +365,7 @@
 
   function validateName(){
   var name =document.getElementById('name').value;
-  if(name.lenght == 0){
+  if(name.length == 0){
   nameError.innerHTML = 'Name is required';
   return false;
   }
@@ -382,7 +382,7 @@
   var email = document.getElementById('email').value;
   var emailError = document.getElementById('email-error')
 
-  if(email.lenght == 0){
+  if(email.length == 0){
   emailError.innerHTML = 'Email is required';
   return false;
   }
