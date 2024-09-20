@@ -119,7 +119,7 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 500px;
+  max-height: 550px;
 }
 
 .hamburger-icon.open span:first-child {
